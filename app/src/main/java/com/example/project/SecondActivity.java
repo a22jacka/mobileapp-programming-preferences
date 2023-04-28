@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.SharedPreferences;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
@@ -23,5 +24,11 @@ public class SecondActivity extends AppCompatActivity {
         TextView prefTextRef=new TextView(this);
         prefTextRef=(TextView)findViewById(R.id.textViewS);
         prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
+    }
+
+    void store() {
+        EditText sharedPrefData = findViewById(R.id.editTextS);
+        myPreferenceEditor.putString("key", sharedPrefData.getText().toString());
+        myPreferenceEditor.apply();
     }
 }
