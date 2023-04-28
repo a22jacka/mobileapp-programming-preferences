@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         TextView prefTextRef= findViewById(R.id.textView);
         prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
 
-        Button submitButton = (Button)findViewById(R.id.button);
+        Button submitButton = findViewById(R.id.button);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,17 +36,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
-
 
     @Override
     protected void onResume() {
         super.onResume();
         TextView sharedPrefData = findViewById(R.id.textView);
         sharedPrefData.setText(myPreferenceRef.getString("key", "Name"));
-
-
-
     }
 }

@@ -23,7 +23,7 @@ public class SecondActivity extends AppCompatActivity {
         myPreferenceRef = getSharedPreferences("key", MODE_PRIVATE);
         myPreferenceEditor = myPreferenceRef.edit();
 
-// Display preferences
+        // Display preferences
         TextView prefTextRef=new TextView(this);
         prefTextRef=(TextView)findViewById(R.id.editTextTextPersonName);
         prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
@@ -37,7 +37,6 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     void store() {
