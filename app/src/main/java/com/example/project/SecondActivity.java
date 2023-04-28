@@ -2,8 +2,11 @@ package com.example.project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.content.SharedPreferences;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,12 +25,23 @@ public class SecondActivity extends AppCompatActivity {
 
 // Display preferences
         TextView prefTextRef=new TextView(this);
-        prefTextRef=(TextView)findViewById(R.id.textViewS);
+        prefTextRef=(TextView)findViewById(R.id.editTextTextPersonName);
         prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
+
+        Button button = findViewById(R.id.buttonSave);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                store();
+                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     void store() {
-        EditText sharedPrefData = findViewById(R.id.editTextS);
+        EditText sharedPrefData = findViewById(R.id.editTextTextPersonName);
         myPreferenceEditor.putString("key", sharedPrefData.getText().toString());
         myPreferenceEditor.apply();
     }
