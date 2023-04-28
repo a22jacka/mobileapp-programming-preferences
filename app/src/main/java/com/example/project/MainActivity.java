@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        EditText sharedPrefData = findViewById(R.id.editTextView);
+        sharedPrefData.setText(myPreferenceRef.getString("key", "Name"));
 
 
 
