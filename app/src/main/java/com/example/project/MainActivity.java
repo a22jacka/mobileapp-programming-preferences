@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                store();
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 startActivity(intent);
             }
@@ -40,16 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void store() {
-        EditText sharedPrefData = findViewById(R.id.editTextView);
-        myPreferenceEditor.putString("key", sharedPrefData.getText().toString());
-        myPreferenceEditor.apply();
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
-        EditText sharedPrefData = findViewById(R.id.editTextView);
+        TextView sharedPrefData = findViewById(R.id.textView);
         sharedPrefData.setText(myPreferenceRef.getString("key", "Name"));
 
 
