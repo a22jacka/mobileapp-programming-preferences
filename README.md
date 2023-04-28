@@ -1,3 +1,19 @@
+Föreläsning
+- Key : Value
+- SharedPreferences byts ut till DATASTORE
+
+Ref - referencs till 'datahanteraren' 
+RefEdit referens till editor objekt, för att uppdatera Key, Value: appl(ASync); || commit(Sync);
+
+
+
+
+
+
+
+
+
+
 
 # Rapport
 

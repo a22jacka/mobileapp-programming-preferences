@@ -21,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
 
 // Display preferences
         TextView prefTextRef=new TextView(this);
-        prefTextRef=(TextView)findViewById(R.id.textView);
-        prefTextRef.setText(myPreferenceRef.getString("MyAppPreferenceString", "No preference found."));
+        prefTextRef=(TextView)findViewById(R.id.textViewS);
+        prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
     }
 }
