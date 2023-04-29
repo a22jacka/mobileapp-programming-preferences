@@ -24,8 +24,7 @@ public class SecondActivity extends AppCompatActivity {
         myPreferenceEditor = myPreferenceRef.edit();
 
         // Display preferences
-        TextView prefTextRef=new TextView(this);
-        prefTextRef=(TextView)findViewById(R.id.editTextTextPersonName);
+        EditText prefTextRef = findViewById(R.id.editTextTextPersonName);
         prefTextRef.setText(myPreferenceRef.getString("key", "No preference found."));
 
         Button button = findViewById(R.id.buttonSave);
